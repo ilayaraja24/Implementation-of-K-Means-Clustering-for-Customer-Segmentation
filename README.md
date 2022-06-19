@@ -59,7 +59,8 @@ plt.scatter(df4["Annual Income (k$)"],df4["Spending Score (1-100)"],c='magenta',
 ```
 
 ## Output:
-![K Means Clustering for Customer Segmentation](sam.png)
+## HEAD:
+![GITHUB LOGO](ml7(1).png)
 
 
 ## Result:
