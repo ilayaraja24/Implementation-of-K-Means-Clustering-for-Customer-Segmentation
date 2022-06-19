@@ -61,6 +61,14 @@ plt.scatter(df4["Annual Income (k$)"],df4["Spending Score (1-100)"],c='magenta',
 ## Output:
 ## HEAD:
 ![GITHUB LOGO](ml7(1).png)
+## INFO:
+![GITHUB LOGO](ml7.png)
+## ISNULL:
+![GITHUB LOGO](ml7(2).png)
+## ELBOW METHOD:
+![GITHUB LOGO](ml7(3).png)
+## MATPLOTLIB:
+![GITHUB LOGO](ml7(4).png)
 
 
 ## Result:
