@@ -20,8 +20,36 @@ Program to implement the K Means Clustering for Customer Segmentation.
 Developed by: ILAYARAJA.M
 RegisterNumber:  212221040057
 */
-
-
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_csv("/content/Mall_Customers.csv")
+df.head()
+df.info()
+df.isnull().sum()
+from sklearn.cluster import KMeans
+wcss=[]
+for i in range(1,11):
+  kmeans=KMeans(n_clusters=i,init="k-means++")
+  kmeans.fit(df.iloc[:,3:])
+  wcss.append(kmeans.inertia_)
+plt.plot(range(1,11),wcss)
+plt.xlabel("no of clusters")
+plt.ylabel("wcss")
+plt.title("Elbow Method")
+km=KMeans(n_clusters=5)
+km.fit(df.iloc[:,3:])
+y_pred=km.predict(df.iloc[:,3:])
+df["cluster"]=y_pred
+df0=df[df["cluster"]==0]
+df1=df[df["cluster"]==1]
+df2=df[df["cluster"]==2]
+df3=df[df["cluster"]==3]
+df4=df[df["cluster"]==4]
+plt.scatter(df0["Annual Income (k$)"],df0["Spending Score (1-100)"],c='red',label="cluster0")
+plt.scatter(df1["Annual Income (k$)"],df1["Spending Score (1-100)"],c='black',label="cluster1")
+plt.scatter(df2["Annual Income (k$)"],df2["Spending Score (1-100)"],c='blue',label="cluster2")
+plt.scatter(df3["Annual Income (k$)"],df3["Spending Score (1-100)"],c='green',label="cluster3")
+plt.scatter(df4["Annual Income (k$)"],df4["Spending Score (1-100)"],c='magenta',label="cluster4")
 ```
 
 ## Output:
